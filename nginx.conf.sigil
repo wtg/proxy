@@ -94,6 +94,9 @@ server {
     location /services/identity/ {
       proxy_pass  http://identity-5000/;
     }
+    location /services/shuttletracker-staging/ {
+      proxy_pass  http://shuttletracker-staging-8080/;
+    }
   }
   include {{ $.DOKKU_ROOT }}/{{ $.APP }}/nginx.conf.d/*.conf;
 
